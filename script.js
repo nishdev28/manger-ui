@@ -14,6 +14,7 @@ fetch("./data.json")
 const extensionsContainer = document.getElementById("extensions-container");
 const filterButtons = document.querySelectorAll(".filter-btn");
 const themeToggle = document.querySelector(".theme-toggle");
+const themeIcon = document.getElementById("theme-icon");
 
 function renderExtensions(filter = "all") {
   extensionsContainer.innerHTML = "";
@@ -99,8 +100,11 @@ themeToggle.addEventListener("click", function () {
   document.body.classList.toggle("light-theme");
   const isLightTheme = document.body.classList.contains("light-theme");
   localStorage.setItem("theme", isLightTheme ? "light" : "dark");
-});
 
+  themeIcon.src = isLightTheme
+    ? "./assets/images/icon-sun.svg"
+    : "./assets/images/icon-moon.svg";
+});
 filterButtons.forEach((button) => {
   button.addEventListener("click", function () {
     filterButtons.forEach((btn) => btn.classList.remove("active"));

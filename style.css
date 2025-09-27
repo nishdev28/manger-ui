@@ -81,6 +81,7 @@ h1 {
 .theme-toggle:hover {
   border-color: var(--red-400);
   background: var(--neutral-600);
+  color: var(--neutral-0);
 }
 
 .theme-toggle:focus {
